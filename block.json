@@ -6,29 +6,14 @@
   "title": "DP Weather",
   "category": "widgets",
   "icon": "cloud",
-  "description": "Display current weather for a location using a public API.",
+  "description": "Display a multi-day weather forecast for a location using a public API.",
   "textdomain": "dp-weather",
   "attributes": {
-    "locationName": {
-      "type": "string",
-      "default": "London, UK"
-    },
-    "latitude": {
-      "type": "number",
-      "default": 51.5072
-    },
-    "longitude": {
-      "type": "number",
-      "default": -0.1276
-    },
-    "units": {
-      "type": "string",
-      "default": "metric"
-    },
-    "numberOfDays": {
-      "type": "number",
-      "default": 7
-    }
+    "locationName": { "type": "string", "default": "London, UK" },
+    "latitude": { "type": "number", "default": 51.5072 },
+    "longitude": { "type": "number", "default": -0.1276 },
+    "units": { "type": "string", "default": "metric" },
+    "numberOfDays": { "type": "number", "default": 7 }
   },
   "supports": {
     "multiple": true,

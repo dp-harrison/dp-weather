@@ -1,95 +1,92 @@
-/**
- * DP Weather block – front-end and editor.
- * All selectors scoped under .wp-block-dp-weather to avoid affecting theme or other blocks.
- */
+/* DP Weather block styles
+   Scoped under .wp-block-dp-weather to avoid leaking styles site-wide. */
 
-/* Block root (front-end) */
-.wp-block-dp-weather.dp-weather-block {
-	display: block;
-	padding: 1rem 1.25rem;
-	margin: 1em 0;
-	background: #f6f8fa;
-	border: 1px solid #e4e8ec;
-	border-radius: 8px;
-	box-sizing: border-box;
-}
-
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__location {
-	font-size: 0.95em;
-	color: #374151;
-	margin-bottom: 0.35em;
-}
-
-/* Forecast grid: N columns from block attribute (--dp-weather-cols) */
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__forecast {
-	display: grid;
-	grid-template-columns: repeat(var(--dp-weather-cols, 7), 1fr);
-	gap: 0.75rem;
-	margin-top: 1rem;
-	list-style: none;
-	padding: 0;
-	margin-left: 0;
-	margin-right: 0;
-}
-
-/* Day cards */
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__card {
+   .wp-block-dp-weather.dp-weather-block {
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 16px;
+	padding: 16px;
+  }
+  
+  .dp-weather-header {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem 0.75rem;
-	background: #fff;
-	border: 1px solid #e4e8ec;
-	border-radius: 10px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-	text-align: center;
-	min-height: 100px;
-	box-sizing: border-box;
-}
-
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__card-emoji {
-	font-size: 2rem;
-	line-height: 1;
-	margin-bottom: 0.35rem;
-	display: block;
-}
-
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__card-day {
-	font-size: 0.8em;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 12px;
+  }
+  
+  .dp-weather-location {
+	margin: 0;
+	font-size: 1.1rem;
+	line-height: 1.2;
+  }
+  
+  .dp-weather-now {
+	display: inline-flex;
+	gap: 8px;
+	align-items: baseline;
+	opacity: 0.9;
+  }
+  
+  .dp-weather-now-label {
+	font-size: 0.85rem;
+	opacity: 0.8;
+  }
+  
+  .dp-weather-now-temp {
 	font-weight: 600;
-	color: #374151;
-	margin-bottom: 0.25rem;
-}
-
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__card-temps {
-	font-size: 0.95em;
-	color: #111827;
-	font-weight: 500;
-}
-
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__card-now {
-	display: block;
-	margin-top: 0.35rem;
-	font-size: 0.75em;
-	color: #6b7280;
-}
-
-.wp-block-dp-weather.dp-weather-block .dp-weather-block__error {
-	color: #b91c1c;
-	font-size: 0.9em;
-}
-
-@media (max-width: 768px) {
-	.wp-block-dp-weather.dp-weather-block .dp-weather-block__forecast {
-		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  /* Responsive grid:
+	 - On wide screens, it respects --dp-weather-cols.
+	 - On small screens, it wraps into a more readable auto-fit grid. */
+  .dp-weather-grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(var(--dp-weather-cols, 7), minmax(0, 1fr));
+  }
+  
+  @media (max-width: 700px) {
+	.dp-weather-grid {
+	  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
 	}
-}
-
-/* Editor preview only */
-.wp-block-dp-weather .dp-weather-block-editor {
-	padding: 0.75rem 1rem;
-	background: #f0f4f8;
-	border: 1px dashed #c5d0dc;
-	border-radius: 6px;
-}
+  }
+  
+  .dp-weather-card {
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 14px;
+	padding: 12px;
+	text-align: center;
+  }
+  
+  .dp-weather-day {
+	font-weight: 600;
+	margin-bottom: 6px;
+  }
+  
+  .dp-weather-emoji {
+	font-size: 24px;
+	line-height: 1;
+	margin-bottom: 8px;
+  }
+  
+  .dp-weather-temps {
+	display: inline-flex;
+	gap: 8px;
+	align-items: baseline;
+	justify-content: center;
+	font-size: 0.95rem;
+  }
+  
+  .dp-weather-max {
+	font-weight: 700;
+  }
+  
+  .dp-weather-min {
+	opacity: 0.7;
+  }
+  
+  .dp-weather-unit {
+	opacity: 0.6;
+	font-size: 0.8rem;
+  }
