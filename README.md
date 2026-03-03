@@ -1,3 +1,6 @@
+<img width="1265" height="313" alt="Screenshot 2026-03-03 at 14 31 49" src="https://github.com/user-attachments/assets/4a6309ad-e6f0-4f94-a235-e9eba30091ea" />
+
+
 # DP Weather
 
 WordPress block that shows a multi-day weather forecast using the [Open-Meteo](https://open-meteo.com/) API.
