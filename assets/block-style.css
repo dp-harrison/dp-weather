@@ -90,3 +90,77 @@
 	opacity: 0.6;
 	font-size: 0.8rem;
   }
+/*
+ * DP Weather block styles
+ * Simplified naming + fully encapsulated
+ */
+
+/* Root block */
+.wp-block-dp-weather {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.wp-block-dp-weather .weather-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.wp-block-dp-weather .weather-location {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.wp-block-dp-weather .weather-now {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Grid */
+.wp-block-dp-weather .weather-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(var(--dp-weather-cols, 7), minmax(0, 1fr));
+}
+
+@media (max-width: 700px) {
+  .wp-block-dp-weather .weather-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+}
+
+/* Card */
+.wp-block-dp-weather .weather-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.wp-block-dp-weather .weather-day {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.wp-block-dp-weather .weather-emoji {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.wp-block-dp-weather .weather-temps {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.wp-block-dp-weather .weather-min {
+  opacity: 0.7;
+  font-weight: 400;
+  margin-left: 4px;
+}
