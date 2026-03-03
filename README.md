@@ -1,5 +1,4 @@
-<img width="1265" height="313" alt="Screenshot 2026-03-03 at 14 31 49" src="https://github.com/user-attachments/assets/4a6309ad-e6f0-4f94-a235-e9eba30091ea" />
-
+<img width="1196" height="215" alt="Screenshot 2026-03-03 at 15 57 07" src="https://github.com/user-attachments/assets/b2b1bfbb-0f04-4895-b12d-79ac1b6f4016" />
 
 # DP Weather
 
